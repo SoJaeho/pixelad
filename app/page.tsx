@@ -1,8 +1,10 @@
+import {connectDB} from '@/utils/database'
 const PIXEL_SIZE = 10;
 const pixels = new Array(13500).fill(false);
 
-function Home() {
-  
+async function Home() {
+  const client = await connectDB;
+  const result = await client.db('pixel').collection('data').find();
   return (
     <div style={{ display: 'grid', gridTemplateColumns: `repeat(150, ${PIXEL_SIZE}px)` }}>
       {pixels.map((pixel, index) => (
