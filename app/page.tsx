@@ -1,12 +1,12 @@
 import {connectDB} from '@/utils/database'
 const PIXEL_SIZE = 10;
-const pixels = new Array(13500).fill(false);
+const pixels = new Array(2500).fill(false);
 
 async function Home() {
   const client = await connectDB;
   const result = await client.db('pixel').collection('data').find().toArray();
   return (
-    <div style={{ position: 'relative',display: 'grid', gridTemplateColumns: `repeat(150, ${PIXEL_SIZE}px)`}}>
+    <div style={{ position: 'relative',display: 'grid', gridTemplateColumns: `repeat(50, ${PIXEL_SIZE}px)`}}>
       {pixels.map((pixel, index) => (
         <div
           key={index}
@@ -29,7 +29,7 @@ async function Home() {
             width: (data.endx-data.startx+1)*PIXEL_SIZE,
             height: (data.endy-data.starty+1)*PIXEL_SIZE,
             backgroundColor: 'blue',
-            border: '1px solid #ddd',
+            border: '1px solid #000',
             
           }}
         />
