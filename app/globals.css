@@ -15,6 +15,7 @@
 }
 
 header {
+  width: 500px;
   background-color: #333;
   color: white;
   padding: 10px 0;
@@ -25,13 +26,16 @@ header nav ul {
   justify-content: center;
   list-style-type: none;
   padding: 0;
+  
 }
 
 header nav ul li {
+  
   margin: 0 20px;
 }
 
 header nav ul li a {
+  
   color: white;
   text-decoration: none;
 }
@@ -47,6 +51,7 @@ body {
 }
 
 footer {
+  width: 500px;
   background-color: #333;
   color: white;
   padding: 10px 0;

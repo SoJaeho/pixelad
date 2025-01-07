@@ -6,6 +6,7 @@ async function Home() {
   const client = await connectDB;
   const result = await client.db('pixel').collection('data').find().toArray();
   return (
+    <>
     <div style={{ position: 'relative',display: 'grid', gridTemplateColumns: `repeat(50, ${PIXEL_SIZE}px)`}}>
       {pixels.map((pixel, index) => (
         <div
@@ -35,6 +36,12 @@ async function Home() {
         />
       ))}
     </div>
+    <div
+    className={`fixed bottom-8 right-8 w-16 h-16 bg-blue-500 rounded-full flex justify-center items-center text-white text-3xl cursor-pointer shadow-lg transition-transform`}
+    >
+    +
+    </div>
+  </>
     
   );
 }
